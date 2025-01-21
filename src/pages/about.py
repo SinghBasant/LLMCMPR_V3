@@ -29,12 +29,6 @@ This tool allows you to compare responses from three different Language Models:
 - Modern, clean interface
 - Error handling for API failures
 
-### How to Use
-1. Enter your API keys in the `.env` file
-2. Adjust the temperature using the slider in the sidebar
-3. Type your message and click Send
-4. Compare the responses from each model
-
 ### Technical Details
 - Built with Streamlit
 - Uses official APIs for each LLM
@@ -43,4 +37,4 @@ This tool allows you to compare responses from three different Language Models:
 """)
 
 st.sidebar.title("About")
-st.sidebar.info("This is a demonstration of different LLM capabilities.") 
+st.sidebar.info("This is a demonstration of different LLM capabilities. Built by Basant Singh from Hyderbad") 
