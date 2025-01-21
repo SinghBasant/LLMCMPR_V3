@@ -62,7 +62,7 @@ def check_password():
         
         with st.container():
             st.markdown('<div class="auth-container">', unsafe_allow_html=True)
-            st.markdown("## 🔐 Access Required")
+            st.markdown("## 🔐Access Code Required - LLM Comparison Tool")
             st.text_input("Enter Access Password:", type="password", key="password")
             st.button("Submit", on_click=password_entered, type="primary")
             st.markdown("</div>", unsafe_allow_html=True)
@@ -72,10 +72,10 @@ def check_password():
         # Password incorrect, show input + error
         with st.container():
             st.markdown('<div class="auth-container">', unsafe_allow_html=True)
-            st.markdown("## 🔐 Access Required")
-            st.text_input("Enter Access Password:", type="password", key="password")
+            st.markdown("## 🔐 Access Code Required - LLM 🧠 Comparison Tool")
+            st.text_input("Enter Access 🔑 Code:", type="password", key="password")
             st.button("Submit", on_click=password_entered, type="primary")
-            st.error("😕 Incorrect password")
+            st.error("😕 Incorrect Code. Get in touch with Basant.")
             st.markdown("</div>", unsafe_allow_html=True)
         return False
     else:
