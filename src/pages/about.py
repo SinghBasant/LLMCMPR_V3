@@ -36,5 +36,5 @@ This tool allows you to compare responses from three different Language Models:
 - Maintains conversation context
 """)
 
-st.sidebar.title("About")
-st.sidebar.info("This is a demonstration of different LLM capabilities. Built by Basant Singh from Hyderbad") 
+st.sidebar.title("Aboutℹ️")
+st.sidebar.info("An LLM Comparison Tool by Basant Singh - a Product Manager at Whizlabs") 
