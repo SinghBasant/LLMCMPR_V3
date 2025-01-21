@@ -203,7 +203,8 @@ def main():
         """, unsafe_allow_html=True)
 
         st.markdown("# LLM Comparison Tool - ChatB🤖ttle Royale👑")
-        st.markdown("### 🔄 A tool by Basant to compare responses from different AI models in real-time!")
+        #st.markdown("### 🔄 A tool by Basant to compare responses from different AI models in real-time!")
+        st.markdown('<p style="color: gray; font-size: 20px;">A tool by Basant to compare responses from different AI models in real-time!</p>', unsafe_allow_html=True)
 
         # Settings in sidebar
         with st.sidebar:
