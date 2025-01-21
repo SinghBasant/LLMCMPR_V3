@@ -8,21 +8,39 @@ from mistralai.models.chat_completion import ChatMessage
 from streamlit_extras.colored_header import colored_header
 from streamlit_modal import Modal
 
-# Load environment variables
-load_dotenv()
+# Load environment variables --local machine
+#load_dotenv()
+
+# Initialize API clients -- LOCAL MACHINE
+# genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+# openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# mistral_client = MistralClient(api_key=os.getenv("MISTRAL_API_KEY"))
+
+
+#For Git/Server deployment
 
 # Initialize API clients
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-mistral_client = MistralClient(api_key=os.getenv("MISTRAL_API_KEY"))
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+openai_client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+mistral_client = MistralClient(api_key=st.secrets["MISTRAL_API_KEY"])
 
 def check_password():
     """Returns `True` if the user has entered the correct password."""
 
     def password_entered():
         """Checks whether the password entered is correct."""
-        if st.session_state["password"] == os.getenv("ACCESS_PASSWORD"):
+        if st.session_state["password"] == st.secrets["ACCESS_PASSWORD"]:
             st.session_state["password_correct"] = True
+
+#FOR LOCAL MACHINE
+
+# def check_password():
+#     """Returns `True` if the user has entered the correct password."""
+
+#     def password_entered():
+#         """Checks whether the password entered is correct."""
+#         if st.session_state["password"] == os.getenv("ACCESS_PASSWORD"):
+#             st.session_state["password_correct"] = True
             del st.session_state["password"]  # Don't store password
         else:
             st.session_state["password_correct"] = False
