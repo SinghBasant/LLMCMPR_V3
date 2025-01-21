@@ -1,8 +1,8 @@
-import streamlit as st
+badimport streamlit as st
 from streamlit_extras.colored_header import colored_header
 
 st.set_page_config(
-    page_title="About - LLM Comparison Tool built by Basant Singh",
+    page_title="About - LLM Comparison Tool is built by Basant Singh, from Hyderabad a Product Manager at Whizlabs",
     page_icon="ℹ️",
     layout="wide"
 )
