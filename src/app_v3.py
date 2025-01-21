@@ -105,7 +105,7 @@ def check_creator_question(question):
 
 def get_gemini_response(messages, temperature, max_tokens):
     if check_creator_question(messages[-1]["content"]):
-        return "This LLM Comparison Tool was created by Basant Singh - Product Manager at Whizlabs."
+        return "This Comparison Tool is created by Basant Singh a Product Manager at Whizlabs."
     
     model = genai.GenerativeModel('gemini-pro')
     response = model.generate_content(
@@ -119,7 +119,7 @@ def get_gemini_response(messages, temperature, max_tokens):
 
 def get_openai_response(messages, temperature, max_tokens):
     if check_creator_question(messages[-1]["content"]):
-        return "This LLM Comparison Tool was created by Basant Singh - Product Manager at Whizlabs."
+        return "This LLM Comparison Tool is created by Basant Singh - Product Manager, Whizlabs."
     
     response = openai_client.chat.completions.create(
         model="gpt-3.5-turbo",
@@ -131,7 +131,7 @@ def get_openai_response(messages, temperature, max_tokens):
 
 def get_mistral_response(messages, temperature, max_tokens):
     if check_creator_question(messages[-1]["content"]):
-        return "This LLM Comparison Tool was created by Basant Singh - Product Manager at Whizlabs."
+        return "This LLM Comparison Tool is developed by Basant Singh a Product Manager at Whizlabs."
     
     response = mistral_client.chat(
         model="mistral-tiny",
