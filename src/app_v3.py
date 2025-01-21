@@ -94,7 +94,19 @@ def initialize_session_state():
     if "max_tokens" not in st.session_state:
         st.session_state.max_tokens = 1000
 
+def check_creator_question(question):
+    """Check if the question is asking about the creator/developer"""
+    creator_keywords = [
+        "who created", "who made", "who developed", "who built",
+        "who is the creator", "who is the developer", "who's the creator",
+        "who designed", "creator of", "developer of", "built by"
+    ]
+    return any(keyword in question.lower() for keyword in creator_keywords)
+
 def get_gemini_response(messages, temperature, max_tokens):
+    if check_creator_question(messages[-1]["content"]):
+        return "This LLM Comparison Tool was created by Basant Singh - Product Manager at Whizlabs."
+    
     model = genai.GenerativeModel('gemini-pro')
     response = model.generate_content(
         messages[-1]["content"] if messages else "",
@@ -106,6 +118,9 @@ def get_gemini_response(messages, temperature, max_tokens):
     return response.text
 
 def get_openai_response(messages, temperature, max_tokens):
+    if check_creator_question(messages[-1]["content"]):
+        return "This LLM Comparison Tool was created by Basant Singh - Product Manager at Whizlabs."
+    
     response = openai_client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": m["role"], "content": m["content"]} for m in messages],
@@ -115,6 +130,9 @@ def get_openai_response(messages, temperature, max_tokens):
     return response.choices[0].message.content
 
 def get_mistral_response(messages, temperature, max_tokens):
+    if check_creator_question(messages[-1]["content"]):
+        return "This LLM Comparison Tool was created by Basant Singh - Product Manager at Whizlabs."
+    
     response = mistral_client.chat(
         model="mistral-tiny",
         messages=[ChatMessage(role=m["role"], content=m["content"]) for m in messages],
