@@ -107,7 +107,8 @@ def get_gemini_response(messages, temperature, max_tokens):
     if check_creator_question(messages[-1]["content"]):
         return "This Comparison Tool is created by Basant Singh a Product Manager at Whizlabs."
     
-    model = genai.GenerativeModel('gemini-pro')
+    #model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-2.0-flash-exp')
     response = model.generate_content(
         messages[-1]["content"] if messages else "",
         generation_config={
