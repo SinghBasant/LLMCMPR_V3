@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_extras.colored_header import colored_header
 
 st.set_page_config(
-    page_title="About - LLM Comparison Tool",
+    page_title="About - LLM Comparison Tool built by Basant Singh",
     page_icon="ℹ️",
     layout="wide"
 )
