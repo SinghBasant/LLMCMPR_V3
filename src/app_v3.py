@@ -279,7 +279,7 @@ def main():
                 """, unsafe_allow_html=True)
 
         # User input section
-        st.markdown("### 💬 Your Message")
+        st.markdown("### 💬 Your Message to LLMs📝")
         user_input = st.text_input("", key="user_input", label_visibility="collapsed")
 
         col1, col2, col3 = st.columns([1, 1, 4])
