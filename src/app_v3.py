@@ -202,7 +202,7 @@ def main():
             </style>
         """, unsafe_allow_html=True)
 
-        st.markdown("# 🤖 LLM Comparison Tool - ChatBottle Royale👑")
+        st.markdown("# LLM Comparison Tool - ChatB🤖ttle Royale👑")
         st.markdown("### 🔄 A tool by Basant to compare responses from different AI models in real-time!")
 
         # Settings in sidebar
@@ -212,7 +212,7 @@ def main():
             # Temperature slider with emoji
             st.markdown("#### 🌡️ Creativity / Temperature")
             st.session_state.temperature = st.slider(
-                "Control randomness",
+                "Control creativity / randomness",
                 min_value=0.0,
                 max_value=1.0,
                 value=0.7,
@@ -221,7 +221,7 @@ def main():
             )
             
             # Max tokens slider with emoji
-            st.markdown("#### 📝 Max Tokens")
+            st.markdown("#### 📝 Max Tokens (~ Words)")
             st.session_state.max_tokens = st.slider(
                 "Control response length",
                 min_value=100,
