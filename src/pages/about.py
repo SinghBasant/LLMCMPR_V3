@@ -30,7 +30,7 @@ This tool allows you to compare responses from three different Language Models:
 - Error handling for API failures
 
 ### Technical Details
-- Built with Streamlit
+- Built with Python and Streamlit
 - Uses official APIs for each LLM
 - Implements modern UI/UX practices
 - Maintains conversation context
